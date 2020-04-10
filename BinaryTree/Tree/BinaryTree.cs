@@ -33,7 +33,9 @@ namespace TestAppForLeetCode.BinaryTree.Tree
             if (root == null)
                 return;
             if (level == 1)
+            {
                 Console.Write(root.Data + " ");
+            }
             else if (level > 1)
             {
                 PrintGivenLevel(root.left, level - 1);

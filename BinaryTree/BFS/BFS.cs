@@ -9,15 +9,27 @@ namespace TestAppForLeetCode.BinaryTree.BFS
     {
         public void printBFSOfTree()
         {
-            BinaryTree.Tree.BinaryTree tree = new BinaryTree.Tree.BinaryTree();
-            tree.root = new Node(1);
+            Tree.BinaryTree tree = new Tree.BinaryTree
+            {
+                root = new Node(1)
+            };
             tree.root.left = new Node(2);
             tree.root.right = new Node(3);
             tree.root.left.left = new Node(4);
             tree.root.left.right = new Node(5);
 
             Console.WriteLine("Level order traversal " + "of binary tree is ");
-            tree.PrintGivenLevel(tree.root, tree.Height(tree.root));
+            printLevelOrder(tree);
+        }
+
+        public virtual void printLevelOrder(BinaryTree.Tree.BinaryTree binaryTree)
+        {
+            int h = binaryTree.Height(binaryTree.root);
+            int i;
+            for (i = 1; i <= h; i++)
+            {
+                binaryTree.PrintGivenLevel(binaryTree.root, i);
+            }
         }
     }
 }
