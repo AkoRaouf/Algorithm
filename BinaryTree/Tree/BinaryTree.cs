@@ -42,5 +42,22 @@ namespace TestAppForLeetCode.BinaryTree.Tree
                 PrintGivenLevel(root.right, level - 1);
             }
         }
+
+        public void PrintGivenLevel(Node root)
+        {
+            Queue<Node> queue = new Queue<Node>();
+            queue.Enqueue(root);
+
+            while(queue.Count != 0)
+            {
+                Node tempNode = queue.Dequeue();
+                Console.Write(tempNode.Data + " ");
+
+                if (tempNode.left != null)
+                    queue.Enqueue(tempNode.left);
+                if (tempNode.right != null)
+                    queue.Enqueue(tempNode.right);
+            }
+        }
     }
 }

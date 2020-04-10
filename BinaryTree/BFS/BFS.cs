@@ -7,6 +7,7 @@ namespace TestAppForLeetCode.BinaryTree.BFS
 {
     public class BFS
     {
+     
         public void printBFSOfTree()
         {
             Tree.BinaryTree tree = new Tree.BinaryTree
@@ -19,7 +20,7 @@ namespace TestAppForLeetCode.BinaryTree.BFS
             tree.root.left.right = new Node(5);
 
             Console.WriteLine("Level order traversal " + "of binary tree is ");
-            printLevelOrder(tree);
+            printLevelOrderQueue(tree);
         }
 
         public virtual void printLevelOrder(BinaryTree.Tree.BinaryTree binaryTree)
@@ -30,6 +31,11 @@ namespace TestAppForLeetCode.BinaryTree.BFS
             {
                 binaryTree.PrintGivenLevel(binaryTree.root, i);
             }
+        }
+
+        public virtual void printLevelOrderQueue(BinaryTree.Tree.BinaryTree binaryTree)
+        {
+            binaryTree.PrintGivenLevel(binaryTree.root);
         }
     }
 }
